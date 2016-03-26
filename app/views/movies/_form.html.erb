@@ -1,0 +1,27 @@
+<%= form_for @movie, url: movie_path do %>
+
+    <div>
+      <input type="text" value="<%= @movie.title %>" name="title" id="title" placeholder="Movie Name"/>
+    </div>
+
+    <div>
+      <textarea name="description" id="description" placeholder="Description" rows="3" style="width: 100%;"><%= @movie.description %></textarea>
+    </div>
+
+    <div>
+      <input type="text" value="<%= @movie.director %>" name="director" id="director" placeholder="Director"/>
+    </div>
+
+    <div>
+      <input type="text" value="<%= @movie.country %>" name="country" id="country" placeholder="Country"/>
+    </div>
+
+    <div>
+      <input type="number" value="<%= @movie.date %>" name="date" id="date" placeholder="date" min="1800"/>
+    </div>
+
+    <div>
+      <input type="submit" name="save" value="Kaydet"/>
+    </div>
+
+<% end %>
