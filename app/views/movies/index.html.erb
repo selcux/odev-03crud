@@ -1,0 +1,16 @@
+<%= content_for :title do %>
+    Film Listesi
+<% end %>
+
+<h4>Film Listesi</h4>
+<%= link_to "Yeni Ekle", new_movie_path %>
+<ul>
+  <% @movies.each do |movie| %>
+      <li>
+        <%= movie.title %>
+        <%= link_to "Detay", movie_path(id: movie.id) %>
+        <%= link_to "Düzenle", edit_movie_path(id: movie.id) %>
+        <%= link_to 'Sil', movie, method: :delete, data: {confirm: 'Emin misiniz?'} %>
+      </li>
+  <% end %>
+</ul>

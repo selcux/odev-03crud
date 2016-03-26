@@ -1,0 +1,37 @@
+<%
+  content_for :title do
+    @movie.title
+  end
+%>
+
+<div style="margin: 10px; background-color: blanchedalmond;">
+  <div style="background-color: burlywood;">
+    <h3>
+      <%= @movie.title %>
+    </h3>
+  </div>
+  <div>
+    <p>
+      <%= @movie.description %>
+    </p>
+  </div>
+  <div>
+    <strong>Director:</strong>
+    <%= @movie.director %>
+  </div>
+  <div>
+		<span>
+			<strong>Country:</strong>
+      <%= @movie.country %>
+		</span>
+		<span>
+			<strong>Date:</strong>
+      <%= @movie.date %>
+		</span>
+  </div>
+</div>
+
+<div>
+  <span><%= link_to "Film Listesi", root_path %></span>
+  <span><%= link_to "Düzenle", edit_movie_path(id: @movie.id) %></span>
+</div>
